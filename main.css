@@ -63,3 +63,19 @@ nav a{
 .full-width{
 	width: 100%;
 }
+
+.metrics{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 200, 0, 0.3);
+	color: white;
+	text-shadow: 2px 2px #111;
+	text-align: center;
+	overflow:hidden;
+}
+
+.show-hide{
+	height: 2em;
+	width: 10em;
+}
