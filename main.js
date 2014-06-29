@@ -1,6 +1,8 @@
 $(document).on('ready', function() {
 
   var metricsHidden = true
+  var scrollLast = $(window).scrollTop()
+  var scrollDistance = 0
 
 	$("#show-hide").on('click', function() {
 		var btnHeight = $("#show-hide").height() + 20
@@ -26,6 +28,16 @@ $(document).on('ready', function() {
 	$(document).on( 'scroll', function(){
     	scrollPercent = Math.round(($(window).scrollTop()/($(document).height() - $(window).height()))*100);
     	$("#scroll-percent").html(scrollPercent + " %")
+
+    	if( $(window).scrollTop() - scrollLast > 0){
+    		scrollDistance = scrollDistance + ($(window).scrollTop() - scrollLast)
+    	}
+    	else{
+    		scrollDistance = scrollDistance + (scrollLast - $(window).scrollTop())
+    	}
+
+    	$("#scroll-distance").html(scrollDistance + " pixels")
+
 	});
 
 	
