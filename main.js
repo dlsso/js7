@@ -1,4 +1,4 @@
-$(document).on('ready', function() {
+$(window).bind("load", function() {
 
   var metricsHidden = true
   var scrollLast = $(window).scrollTop()
@@ -13,17 +13,28 @@ $(document).on('ready', function() {
 			metricsHidden = false;
 		}
 		else{
-			console.log(btnHeight)
 			$("#metrics").animate({height:btnHeight});
 			$("#show-hide").html("Show Metrics");
 			metricsHidden = true;			
 		}
-
-
 	})
 
+	
+	$("#show-hide").one('click', function() {
+		var time = 0
+		setInterval(function(){
+			time = time + 1
+			if(time%60<10){
+				seconds = "0" + time%60
+			}
+			else{
+				seconds = time%60
+			}
 
-	scrollPercent = ($(window).scrollTop()/($(document).height() - $(window).height()))*100;
+			$("#timer").html( Math.floor(time/60)+":"+ seconds + " minutes ago.")
+		},1000);
+	})
+	
 	
 	$(document).on( 'scroll', function(){
     	scrollPercent = Math.round(($(window).scrollTop()/($(document).height() - $(window).height()))*100);
@@ -38,8 +49,27 @@ $(document).on('ready', function() {
 
     	$("#scroll-distance").html(scrollDistance + " pixels")
 
+
+    	
+
 	});
 
-	
+
+	var time = 0
+	setInterval(function(){
+		time = time + 1
+		if(time%60<10){
+			seconds = "0" + time%60
+		}
+		else{
+			seconds = time%60
+		}
+
+		$("#page-timer").html( Math.floor(time/60)+":"+ seconds + " minutes ago.")
+	},1000);
+
+
+
+
 
 });
