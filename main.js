@@ -48,11 +48,32 @@ $(window).bind("load", function() {
     	}
 
     	$("#scroll-distance").html(scrollDistance + " pixels")
-
-
-    	
-
 	});
+
+	setInterval(function(){
+		if($(window).scrollTop()<1000 ){
+			console.log("section 1")
+		}
+		else if($(window).scrollTop()>1000 && $(window).scrollTop()<2000){
+			console.log("section 2")
+		}
+		else if($(window).scrollTop()>2000 && $(window).scrollTop()<3000){
+			console.log("section 3")
+		}
+		else if($(window).scrollTop()>3000 && $(window).scrollTop()<4000){
+			console.log("section 4")
+		}
+		else if($(window).scrollTop()>4000 && $(window).scrollTop()<5000){
+			console.log("section 5")
+		}
+		else if($(window).scrollTop()>5000 && $(window).scrollTop()<6000){
+			console.log("section 6")
+		}
+		else{
+			console.log("section 7")
+		}
+
+	},1000);
 
 
 	var time = 0
