@@ -64,6 +64,7 @@ nav a{
 	width: 100%;
 }
 
+
 .metrics{
 	position: fixed;
 	bottom: 0;
@@ -72,10 +73,21 @@ nav a{
 	color: white;
 	text-shadow: 2px 2px #111;
 	text-align: center;
-	overflow:hidden;
 }
 
 .show-hide{
-	height: 2em;
-	width: 10em;
+	font-size: large;
+	padding: 10px;
+	width: 8em;
+}
+
+.metrics a{
+	text-decoration: none;
+	color: white;
+}
+
+#metrics-content{
+		width:0;
+		height: 0;
+		overflow: hidden;
 }
