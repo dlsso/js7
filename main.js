@@ -127,7 +127,7 @@ $(window).bind("load", function() {
 
 		// Easter egg if you stare at the 2nd "when you see it" for a while and click on it
 		$("img[title='No hint']").on('click', function() {
-			if(seconds6>30){alert("Yeah, I couldn't find it either.")}
+			if(time6>30){alert("Yeah, I couldn't find it either.")}
 		})
 
 	// Time spent on page
